@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { TodoModule } from './todo/todo.module';
 import { User } from './user/entities/user.entity';
 import { Todo } from './todo/entities/todo.entity';
+import { AuthModule } from './auth/auth.module';
 
 
 //find all user
@@ -37,7 +38,8 @@ import { Todo } from './todo/entities/todo.entity';
     }),
     }),
     UserModule,
-    TodoModule
+    TodoModule,
+    AuthModule
   ],
   controllers: [],
   providers: [],

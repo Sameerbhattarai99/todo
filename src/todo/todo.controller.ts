@@ -2,8 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, ValidationPipe } fro
 import { TodoService } from './todo.service';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
+import { ApiSecurity } from '@nestjs/swagger';
 
 @Controller('todo')
+@ApiSecurity("JWT-auth")
 export class TodoController {
   constructor(private readonly todoService: TodoService) {}
 

@@ -30,7 +30,7 @@ export class UserService {
     return this.userRepository.find();
   }
   findUserByEmail(email:string){
-    return this.userRepository.findOneOrFail({where :{email:email}});
+    return this.userRepository.findOne({where :{email:email}});
   }
 
  
