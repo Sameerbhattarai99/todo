@@ -11,9 +11,10 @@ export class AuthController {
     constructor(private jwtService:JwtService){}
 
 @Post('/login')
-
+@UseGuards(AuthGuard('local'))
 login(@Req()req,@Body()LoginDto:LoginDto){
-    const user:User=req.user;
+    ;
+    const user: User = req.user;
     const payload={
         userId:user.id,
         firstName:user.firstName,
@@ -25,3 +26,4 @@ login(@Req()req,@Body()LoginDto:LoginDto){
 return {token:this.jwtService.sign(payload)};
 }
 }
+
